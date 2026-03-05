@@ -114,94 +114,76 @@ const useAudio = (isMuted) => {
 };
 
 // ══════════════════════════════════════════════════════════════════════════════
-// ALL 60 QUESTIONS - Classes, Objects, Methods & OOP Concepts
+// ALL 55 QUESTIONS - Complete OOP Coverage
 // ══════════════════════════════════════════════════════════════════════════════
 
 const questions = [
-  // PROGRAMMING PARADIGMS (1-8)
-  {type:"Definition",num:1,q:"A programming paradigm refers to:",c:["The speed of program execution","Different approaches to structuring and organizing code","The type of computer language used","The size of a program"],a:1},
-  {type:"Definition",num:2,q:"Which programming paradigm executes operations one after another in sequence and uses variables?",c:["Functional Programming","Object-oriented Programming","Procedural Programming","Logic Programming"],a:2},
-  {type:"Definition",num:3,q:"The basic construct in Procedural Programming is:",c:["Classes","Objects","Procedures (functions, modules, subroutines)","Expressions"],a:2},
-  {type:"Definition",num:4,q:"Functional Programming focuses on:",c:["Declarations and expressions rather than execution of statements","Step-by-step procedures","Object creation","Variable manipulation"],a:0},
-  {type:"Definition",num:5,q:"In Functional Programming, functions are treated as:",c:["Second-class citizens","First-class citizens that can be assigned to variables or passed as arguments","Only for calculations","Not important"],a:1},
-  {type:"Definition",num:6,q:"Object-oriented Programming (OOP) is an extension of:",c:["Functional Programming","Logic Programming","Procedural Programming","Assembly Language"],a:2},
-  {type:"Application",num:7,q:"Which languages support OOP?",c:["Erlang and Haskel","Java, Python, VB.NET, and C#","BASIC and Pascal only","Only Java"],a:1},
-  {type:"Comparison",num:8,q:"In naming conventions, what is 'Function Call' in Procedural Programming called in OOP?",c:["Method","Message Passing","Instance Variable","Class"],a:1},
+  // HANDOUT 1: CLASSES, OBJECTS, METHODS (1-30)
+  {type:"Definition",num:1,q:"A class is:",c:["A specific instance","A blueprint or template for objects with common properties","A method","A variable"],a:1},
+  {type:"Definition",num:2,q:"An object is:",c:["A blueprint","A specific and concrete instance of a class","A function","A data type"],a:1},
+  {type:"Definition",num:3,q:"A method is:",c:["A variable","A class definition","A self-contained block of code that carries out actions","An object instance"],a:2},
+  {type:"Definition",num:4,q:"Data members of an object are:",c:["Its operations/actions","Its characteristics/features","Its methods","Its classes"],a:1},
+  {type:"Definition",num:5,q:"Function members of an object are:",c:["Its characteristics","Its operations/actions","Its attributes","Its properties"],a:1},
+  {type:"CodeID",num:6,q:"In `public static void main(String[] args)`, `public` means:",c:["The method is private","Any other class can use it","The method is slow","It requires an object"],a:1},
+  {type:"CodeID",num:7,q:"In `public static void main(String[] args)`, `static` means:",c:["The method changes","The method can be used without instantiating an object","The method is fast","It requires an object"],a:1},
+  {type:"CodeID",num:8,q:"In `public static void main(String[] args)`, `void` means:",c:["The method is empty","The method returns no data","The method returns an integer","The method is public"],a:1},
+  {type:"Definition",num:9,q:"Accessor methods (getters):",c:["Set values","Retrieve/return values","Delete values","Create objects"],a:1},
+  {type:"Definition",num:10,q:"Mutator methods (setters):",c:["Set or change field values","Only retrieve values","Delete fields","Create classes"],a:0},
+  {type:"CodeID",num:11,q:"In `Employee someEmployee = new Employee();`, `Employee` (first one) is:",c:["Object name","The data type/class","A method","A field"],a:1},
+  {type:"CodeID",num:12,q:"In `Employee someEmployee = new Employee();`, `someEmployee` is:",c:["The class","The object's name/identifier","A method","A constructor"],a:1},
+  {type:"CodeID",num:13,q:"In `Employee someEmployee = new Employee();`, `new` does:",c:["Deletes memory","Allocates memory for the object","Calls a method","Nothing"],a:1},
+  {type:"CodeID",num:14,q:"In `Employee someEmployee = new Employee();`, `Employee()` is:",c:["A method call","The constructor that creates the object","An object","A field"],a:1},
+  {type:"Definition",num:15,q:"A constructor is:",c:["A regular method","A special method that creates and initializes objects","A variable","A field"],a:1},
+  {type:"Definition",num:16,q:"The `private` access specifier means:",c:["Any class can access","No other classes can access the field's values except methods of the same class","The field is public","The field is deleted"],a:1},
+  {type:"Definition",num:17,q:"Information hiding is:",c:["Deleting data","Assigning private access so other classes cannot access field values","Making everything public","Removing classes"],a:1},
+  {type:"Definition",num:18,q:"Data abstraction is:",c:["Including only essential details without background details","Showing all internal workings","Removing all data","Making everything public"],a:0},
+  {type:"Definition",num:19,q:"Data encapsulation is:",c:["Making all data public","Wrapping data and functions into a class, performing data hiding","Removing functions","Separating data from methods"],a:1},
+  {type:"Definition",num:20,q:"Polymorphism means:",c:["One form only","Many forms - same word/symbol interpreted differently based on context","No forms","Random forms"],a:1},
+  {type:"CodeID",num:21,q:"In the Fish/Tilapia example, `class Tilapia extends Fish`, `extends` means:",c:["Tilapia deletes Fish","Tilapia inherits from Fish","Fish inherits from Tilapia","They are unrelated"],a:1},
+  {type:"CodeID",num:22,q:"In `freshwater.name = \"Tippy\";`, `name` is:",c:["A method","A field inherited from Fish superclass","A local variable","A constructor"],a:1},
+  {type:"CodeID",num:23,q:"In `freshwater.swim();`, `swim()` is:",c:["A field","A method inherited from Fish superclass","A variable","A class"],a:1},
+  {type:"Definition",num:24,q:"A fully qualified identifier:",c:["Is just the method name","Includes class name, dot, and method name","Is just the class name","Has no structure"],a:1},
+  {type:"Definition",num:25,q:"The method body is:",c:["The method header","Statements between curly braces that carry out the work","The method name","The return type"],a:1},
+  {type:"Definition",num:26,q:"A reference type is:",c:["A primitive type like int","A class type like Employee","Only integers","Only strings"],a:1},
+  {type:"Definition",num:27,q:"A primitive type is:",c:["A class type","Built-in types like int, double","A reference type","An object"],a:1},
+  {type:"CodeID",num:28,q:"Can a method be placed INSIDE another method in Java?",c:["Yes, always","No, methods cannot be placed inside other methods","Yes, but only main()","Sometimes"],a:1},
+  {type:"Definition",num:29,q:"A data field is `static` if:",c:["It occurs once per object","It occurs once per class","It never changes","It is private"],a:1},
+  {type:"Definition",num:30,q:"A data field is `non-static` if:",c:["It occurs once per class","It occurs once per object","It is always public","It is deleted"],a:1},
 
-  // OOP VS PROCEDURAL (9-13)
-  {type:"Comparison",num:9,q:"Procedural Programming emphasizes:",c:["Data rather than procedures","Procedures rather than data","Only security","Only objects"],a:1},
-  {type:"Comparison",num:10,q:"OOP uses which approach?",c:["Top-down approach","Bottom-up approach","Random approach","Sequential approach"],a:1},
-  {type:"Comparison",num:11,q:"Which statement is TRUE about OOP?",c:["Data is not secured","It does not model real-world entities","It models real-world entities","Programs are decomposed into functions"],a:2},
-  {type:"Definition",num:12,q:"An advantage of OOP is:",c:["Increased code duplication","Reduced data security","Modularized programs using classes and objects","More complex development"],a:2},
-  {type:"Definition",num:13,q:"OOP provides data security through:",c:["Public access to all data","Encapsulation that makes data inaccessible to non-member functions","Removing all functions","Making everything global"],a:1},
+  // HANDOUT 2: INHERITANCE (31-45)
+  {type:"Definition",num:31,q:"Inheritance allows:",c:["Deletion of classes","One class to acquire all behaviors and attributes of another class","Creation of variables","Only methods to be shared"],a:1},
+  {type:"CodeID",num:32,q:"The `extends` keyword:",c:["Deletes a class","Establishes inheritance between classes","Creates a variable","Removes methods"],a:1},
+  {type:"Definition",num:33,q:"A superclass is:",c:["A class that inherits from another","The class that is inherited FROM (parent/base class)","Always private","A method"],a:1},
+  {type:"Definition",num:34,q:"A subclass is:",c:["The class that inherits properties FROM another (child/derived class)","The class that is inherited from","Never inherits","A constructor"],a:0},
+  {type:"Definition",num:35,q:"Inheritance provides which relationship?",c:["Has-A","Is-A","Uses-A","Deletes-A"],a:1},
+  {type:"Application",num:36,q:"If `Car extends Vehicle`, then:",c:["Vehicle IS A Car","Car IS A Vehicle","They are unrelated","Car deletes Vehicle"],a:1},
+  {type:"Definition",num:37,q:"Inheritance promotes:",c:["Code duplication","Code reusability by allowing subclass to reuse fields/methods of superclass","Code deletion","Code hiding"],a:1},
+  {type:"Definition",num:38,q:"Method overriding happens when:",c:["Methods are deleted","The same method is present in both superclass and subclass with same name and signature","Methods are created","Classes are removed"],a:1},
+  {type:"CodeID",num:39,q:"The `@Override` annotation:",c:["Deletes the method","Indicates the method overrides a superclass method","Creates a new class","Is required for all methods"],a:1},
+  {type:"CodeID",num:40,q:"In the Fish/Tilapia override example, when `freshwater.swim()` is called:",c:["Fish's swim() is executed","Tilapia's swim() is executed (the overridden version)","Both are executed","Neither is executed"],a:1},
+  {type:"CodeID",num:41,q:"The `super` keyword is used to:",c:["Delete the superclass","Call the method of the superclass from the subclass","Create a new object","Remove inheritance"],a:1},
+  {type:"CodeID",num:42,q:"In `super.swim();` inside Tilapia's swim() method:",c:["It deletes swim()","It calls Fish's swim() method","It creates a new method","It does nothing"],a:1},
+  {type:"Application",num:43,q:"If Tilapia extends Fish, and freshwater is a Tilapia object, can freshwater access Fish's methods?",c:["No, never","Yes, because Tilapia inherits from Fish","Only if Fish is public","Only if methods are static"],a:1},
+  {type:"Application",num:44,q:"In inheritance, which is inherited by the subclass?",c:["Only private fields","Only public methods","All non-private fields and methods","Nothing"],a:2},
+  {type:"Definition",num:45,q:"Code reusability in inheritance means:",c:["Writing the same code multiple times","The subclass can reuse fields/methods from superclass without rewriting them","Deleting code","Hiding code"],a:1},
 
-  // CLASS, OBJECT, METHOD CONCEPTS (14-22)
-  {type:"Definition",num:14,q:"A class is BEST described as:",c:["A specific instance of an object","A blueprint or template for objects with common properties","A method that creates objects","A variable type"],a:1},
-  {type:"Definition",num:15,q:"An object is:",c:["A blueprint for classes","A specific and concrete instance of a class","A method in a program","A programming paradigm"],a:1},
-  {type:"Definition",num:16,q:"A method is:",c:["A variable","A self-contained block of code that carries out actions","A class definition","An object instance"],a:1},
-  {type:"Analogy",num:17,q:"If a class is compared to a blueprint, an object is:",c:["Another blueprint","A house built from that blueprint","The architect","The construction materials"],a:1},
-  {type:"Application",num:18,q:"In the Automobile class example, 'Make, Model, Year, Color' are:",c:["Methods","Objects","Attributes/Properties","Classes"],a:2},
-  {type:"Application",num:19,q:"In the Automobile class example, 'Forward, Backward, Gas Status' are:",c:["Objects","Methods","Attributes","Classes"],a:1},
-  {type:"Analogy",num:20,q:"Objects can be compared to _____, while methods are similar to _____:",c:["Verbs, Nouns","Adjectives, Adverbs","Nouns, Verbs","Numbers, Letters"],a:2},
-  {type:"Definition",num:21,q:"Data members of an object are:",c:["Its operations/actions","Its characteristics/features","Its methods","Its classes"],a:1},
-  {type:"Definition",num:22,q:"Function members of an object are:",c:["Its characteristics","Its operations/actions","Its attributes","Its properties"],a:1},
-
-  // OOP CORE CONCEPTS (23-31)
-  {type:"Definition",num:23,q:"Data Abstraction means:",c:["Including only essential details without background details","Showing all internal workings","Removing all data","Making everything public"],a:0},
-  {type:"Definition",num:24,q:"Data Encapsulation is:",c:["Making all data public","Wrapping data and functions into a class, performing data hiding","Removing functions from classes","Separating data from methods"],a:1},
-  {type:"Definition",num:25,q:"Inheritance allows:",c:["Classes to share attributes and methods of existing classes with more specific features","Objects to change their class","Methods to become classes","Data to be deleted"],a:0},
-  {type:"Definition",num:26,q:"In inheritance, the class that inherits properties FROM another class is called:",c:["Base class or parent class","Derived class, child class, or subclass","Super class only","Independent class"],a:1},
-  {type:"Definition",num:27,q:"Polymorphism means:",c:["One form only","Many forms - same word/symbol interpreted differently based on context","No forms","Random forms"],a:1},
-  {type:"Application",num:28,q:"Operator overloading example: the + operator performs addition for numbers, but for strings like 'Just'+'ice', it:",c:["Gives an error","Performs string concatenation resulting in 'Justice'","Deletes the strings","Converts to numbers"],a:1},
-  {type:"Application",num:29,q:"Function overloading means:",c:["One function with one return type","Two or more functions with the same name but different return types or arguments","Functions that don't work","Deleting functions"],a:1},
-  {type:"Example",num:30,q:"In the Employee inheritance example, if Manager, Supervisor, and Clerk inherit from Employee, Employee is the:",c:["Derived class","Child class","Base class or parent class","Subclass"],a:2},
-  {type:"Definition",num:31,q:"Information hiding is:",c:["Deleting all information","Assigning private access so other classes cannot access field values","Making everything public","Removing all classes"],a:1},
-
-  // METHODS IN DETAIL (32-40)
-  {type:"Definition",num:32,q:"A method header (method declaration) provides:",c:["The method body","Information about how other methods can interact with it","The main() method","Object instances"],a:1},
-  {type:"CodeID",num:33,q:"In 'public static void main(String[] args)', what does 'public' mean?",c:["The method is slow","Any other class can use it","The method is hidden","It's a variable"],a:1},
-  {type:"CodeID",num:34,q:"In 'public static void main(String[] args)', what does 'static' mean?",c:["The method never changes","The method can be used without instantiating an object","The method is fast","It requires an object"],a:1},
-  {type:"CodeID",num:35,q:"In 'public static void main(String[] args)', what does 'void' mean?",c:["The method is empty","The method returns no data","The method returns an integer","The method is public"],a:1},
-  {type:"Definition",num:36,q:"A calling method that invokes another method is also called:",c:["Server method","Client method","Object method","Class method"],a:1},
-  {type:"Definition",num:37,q:"The method body is:",c:["The method header","The statements between curly braces that carry out the work","The method name","The return type"],a:1},
-  {type:"Definition",num:38,q:"The body of a method is also called its:",c:["Declaration","Header","Implementation","Call"],a:2},
-  {type:"Application",num:39,q:"If a method needs to display company hours, a good method name would be:",c:["method1()","x()","displayHours()","void()"],a:2},
-  {type:"CodeID",num:40,q:"Can a method be placed INSIDE another method in Java?",c:["Yes, always","No, methods cannot be placed inside other methods","Yes, but only main()","Sometimes"],a:1},
-
-  // CODE IDENTIFICATION: CompanyInfo Examples (41-46)
-  {type:"CodeID",num:41,q:"In the CompanyInfo class, 'displayHours()' is an example of:",c:["An object","A method being called","A variable","A class"],a:1},
-  {type:"CodeID",num:42,q:"The full name (fully qualified identifier) of displayHours() in CompanyInfo class is:",c:["displayHours()","CompanyInfo()","CompanyInfo.displayHours()","main.displayHours()"],a:2},
-  {type:"CodeID",num:43,q:"In 'public static void displayHours()', displayHours is the:",c:["Return type","Access modifier","Method name","Parameter"],a:2},
-  {type:"Application",num:44,q:"What is an advantage of creating separate methods?",c:["Makes programs longer","Methods make code reusable and easier to follow","Increases complexity","Slows down execution"],a:1},
-  {type:"CodeID",num:45,q:"Which method always executes FIRST in any Java application?",c:["displayHours()","The last method in the file","main()","Any method"],a:2},
-  {type:"Definition",num:46,q:"Methods that retrieve/return values are called:",c:["Mutator methods or setters","Accessor methods or getters","Constructor methods","Static methods"],a:1},
-
-  // CLASSES AND OBJECTS CODE (47-55)
-  {type:"Definition",num:47,q:"Methods that set or change field values are called:",c:["Accessor methods or getters","Mutator methods or setters","Constructor methods","Main methods"],a:1},
-  {type:"CodeID",num:48,q:"In 'public class Employee', what is 'Employee'?",c:["A method","The class name","An object","A variable"],a:1},
-  {type:"CodeID",num:49,q:"In 'private int empNum;', empNum is a:",c:["Method","Class","Data field (instance variable)","Constructor"],a:2},
-  {type:"CodeID",num:50,q:"Why use 'private' for empNum instead of 'public'?",c:["It's faster","It provides security - other classes cannot directly access it","It's required by Java","No reason"],a:1},
-  {type:"CodeID",num:51,q:"In 'public int getEmpNum()', this method is:",c:["A setter/mutator","A getter/accessor that returns the empNum","A constructor","A class"],a:1},
-  {type:"CodeID",num:52,q:"In 'public void setEmpNum(int emp)', this method is:",c:["A getter/accessor","A setter/mutator that sets the empNum","A constructor","A field"],a:1},
-  {type:"CodeID",num:53,q:"'Employee clerk = new Employee();' - what is 'Employee' (first one)?",c:["Object name","The data type/class","A method","A field"],a:1},
-  {type:"CodeID",num:54,q:"'Employee clerk = new Employee();' - what is 'clerk'?",c:["The class","The object's name/identifier","A method","A constructor"],a:1},
-  {type:"CodeID",num:55,q:"'Employee clerk = new Employee();' - what does 'new' do?",c:["Deletes memory","Allocates memory for the object","Calls a method","Nothing"],a:1},
-
-  // ADVANCED CODE & CONCEPTS (56-60)
-  {type:"CodeID",num:56,q:"'Employee clerk = new Employee();' - what is 'Employee()' after new?",c:["A method call","The constructor that creates the Employee object","An object","A field"],a:1},
-  {type:"Definition",num:57,q:"A constructor is:",c:["A regular method","A special method that creates and initializes objects","A variable","A field"],a:1},
-  {type:"CodeID",num:58,q:"In 'clerk.setEmpNum(345);' what does the dot (.) mean?",c:["Addition","Accessing the object's method","Subtraction","Nothing"],a:1},
-  {type:"Definition",num:59,q:"Employee is a reference type, while int is a:",c:["Reference type","Primitive type","Object type","Class type"],a:1},
-  {type:"CodeID",num:60,q:"If a field is declared WITHOUT the 'static' keyword in a class, it means:",c:["The field is shared by all objects","Each object has its own copy of that field","The field cannot be used","It's a constant"],a:1},
+  // HANDOUT 2: INTERFACES (46-55)
+  {type:"Definition",num:46,q:"An interface is:",c:["A concrete class","A collection of abstract methods (without body) and constant values","A regular method","An object"],a:1},
+  {type:"Definition",num:47,q:"The `interface` keyword is used to:",c:["Create a class","Create an interface","Delete a method","Create an object"],a:1},
+  {type:"Definition",num:48,q:"Can objects of interfaces be created?",c:["Yes, always","No, interfaces must be implemented by other classes","Sometimes","Only if public"],a:1},
+  {type:"CodeID",num:49,q:"The `implements` keyword is used to:",c:["Delete an interface","Apply/implement an interface in a class","Create a variable","Remove methods"],a:1},
+  {type:"Definition",num:50,q:"Abstract methods in an interface:",c:["Have a method body","Have NO method body (declaration only)","Are private","Cannot be used"],a:1},
+  {type:"CodeID",num:51,q:"If `class Box implements Shape`, Box must:",c:["Delete Shape","Provide implementation for all abstract methods in Shape","Ignore Shape","Create new interfaces"],a:1},
+  {type:"Application",num:52,q:"Can a class implement multiple interfaces?",c:["No, only one","Yes, using commas: `class Z implements X, Y`","Never allowed","Only if interfaces are empty"],a:1},
+  {type:"CodeID",num:53,q:"In `interface Basketball extends Sports`, Basketball:",c:["Deletes Sports","Extends Sports interface, inheriting its members","Implements Sports","Removes methods"],a:1},
+  {type:"Application",num:54,q:"If a class implements Basketball (which extends Sports), it must implement methods from:",c:["Only Basketball","Both Basketball and Sports","Neither","Only Sports"],a:1},
+  {type:"Definition",num:55,q:"The main purpose of interfaces is to:",c:["Delete classes","Define a contract/set of functionalities that must be implemented","Create objects directly","Hide all code"],a:1},
 ];
 
 const TYPE_META = {
   Definition: { color:"#3b82f6", icon:"📚", label:"Definition" },
   Application: { color:"#10b981", icon:"⚙️", label:"Application" },
   CodeID: { color:"#f59e0b", icon:"💻", label:"Code ID" },
-  Comparison: { color:"#8b5cf6", icon:"⚖️", label:"Comparison" },
-  Analogy: { color:"#ec4899", icon:"🔗", label:"Analogy" },
-  Example: { color:"#06b6d4", icon:"📝", label:"Example" },
 };
 
 const LETTERS = ["A","B","C","D"];
@@ -209,7 +191,7 @@ const LETTERS = ["A","B","C","D"];
 export default function App() {
   const [screen, setScreen] = useState("intro");
   const [current, setCurrent] = useState(0);
-  const [answers, setAnswers] = useState(Array(60).fill(null));
+  const [answers, setAnswers] = useState(Array(55).fill(null));
   const [showFeedback, setShowFeedback] = useState(false);
   const [timeLeft, setTimeLeft] = useState(5400); // 90 min
   const [timerActive, setTimerActive] = useState(false);
@@ -250,24 +232,22 @@ export default function App() {
     },100);
   }
 
-  function next(){sounds.click();setShowFeedback(false);if(current<59)setCurrent(c=>c+1);else{setTimerActive(false);stopBgMusic();sounds.finish();setScreen("results");}}
+  function next(){sounds.click();setShowFeedback(false);if(current<54)setCurrent(c=>c+1);else{setTimerActive(false);stopBgMusic();sounds.finish();setScreen("results");}}
   function prev(){if(current>0){sounds.click();setShowFeedback(false);setCurrent(c=>c-1);}}
   function submit(){setTimerActive(false);stopBgMusic();sounds.finish();setScreen("results");}
-  function restart(){setAnswers(Array(60).fill(null));setCurrent(0);setShowFeedback(false);setTimeLeft(5400);setTimerActive(false);setReviewMode(false);setScreen("intro");}
+  function restart(){setAnswers(Array(55).fill(null));setCurrent(0);setShowFeedback(false);setTimeLeft(5400);setTimerActive(false);setReviewMode(false);setScreen("intro");}
 
   const score=answers.reduce((a,v,i)=>v===questions[i].a?a+1:a,0);
-  const pct=Math.round((score/60)*100);
+  const pct=Math.round((score/55)*100);
   const grade=pct>=90?{label:"Excellent!",c:"#10b981",e:"🏆"}:pct>=80?{label:"Very Good!",c:"#3b82f6",e:"⭐"}:pct>=75?{label:"Passed",c:"#8b5cf6",e:"✅"}:pct>=60?{label:"Needs Review",c:"#f59e0b",e:"📚"}:{label:"Keep Studying",c:"#ef4444",e:"💪"};
 
   const sections=[
-    {label:"Programming Paradigms",qs:Array.from({length:8},(_,i)=>i)},
-    {label:"OOP vs Procedural",qs:Array.from({length:5},(_,i)=>i+8)},
-    {label:"Class, Object, Method",qs:Array.from({length:9},(_,i)=>i+13)},
-    {label:"OOP Core Concepts",qs:Array.from({length:9},(_,i)=>i+22)},
-    {label:"Methods in Detail",qs:Array.from({length:9},(_,i)=>i+31)},
-    {label:"Code: CompanyInfo",qs:Array.from({length:6},(_,i)=>i+40)},
-    {label:"Classes & Objects Code",qs:Array.from({length:9},(_,i)=>i+46)},
-    {label:"Advanced Code",qs:Array.from({length:5},(_,i)=>i+55)},
+    {label:"Classes & Objects Basics",qs:Array.from({length:5},(_,i)=>i)},
+    {label:"Methods & Access Modifiers",qs:Array.from({length:8},(_,i)=>i+5)},
+    {label:"Object Creation & Constructors",qs:Array.from({length:7},(_,i)=>i+13)},
+    {label:"OOP Core Concepts",qs:Array.from({length:10},(_,i)=>i+20)},
+    {label:"Inheritance Fundamentals",qs:Array.from({length:15},(_,i)=>i+30)},
+    {label:"Interfaces",qs:Array.from({length:10},(_,i)=>i+45)},
   ];
 
   const css=`
@@ -291,12 +271,12 @@ export default function App() {
     <div style={{minHeight:"100vh",background:"linear-gradient(135deg,#0a0e14,#1a1f2e,#0a0e14)",display:"flex",alignItems:"center",justifyContent:"center",padding:"24px"}}>
       <style>{css}</style>
       <div className="fade" style={{background:"rgba(255,255,255,0.03)",backdropFilter:"blur(24px)",border:"1px solid rgba(59,130,246,0.3)",borderRadius:"20px",padding:"48px 40px",maxWidth:"680px",width:"100%",textAlign:"center",boxShadow:"0 0 60px rgba(59,130,246,0.2)"}}>
-        <div style={{fontSize:"11px",letterSpacing:"4px",color:"#60a5fa",textTransform:"uppercase",marginBottom:"10px",fontWeight:600}}>IT2408</div>
-        <h1 style={{fontSize:"clamp(28px,5vw,44px)",fontWeight:800,color:"#f1f5f9",marginBottom:"8px",lineHeight:1.15,textShadow:"0 0 40px rgba(59,130,246,0.4)",letterSpacing:"-0.5px"}}>OOP Mastery Exam</h1>
-        <p style={{color:"#94a3b8",fontSize:"15px",marginBottom:"28px",fontFamily:"'JetBrains Mono',monospace",letterSpacing:"0.3px"}}>Classes, Objects, Methods & Code Identification</p>
+        <div style={{fontSize:"11px",letterSpacing:"4px",color:"#60a5fa",textTransform:"uppercase",marginBottom:"10px",fontWeight:600}}>IT2408 • COMPREHENSIVE</div>
+        <h1 style={{fontSize:"clamp(28px,5vw,44px)",fontWeight:800,color:"#f1f5f9",marginBottom:"8px",lineHeight:1.15,textShadow:"0 0 40px rgba(59,130,246,0.4)",letterSpacing:"-0.5px"}}>OOP Complete Exam</h1>
+        <p style={{color:"#94a3b8",fontSize:"15px",marginBottom:"28px",fontFamily:"'JetBrains Mono',monospace",letterSpacing:"0.3px"}}>Classes • Objects • Methods • Inheritance • Interfaces</p>
         
         <div style={{display:"grid",gridTemplateColumns:"repeat(auto-fit,minmax(110px,1fr))",gap:"12px",marginBottom:"24px"}}>
-          {[["60","Questions"],["90","Minutes"],["1pt","Each"],["8","Sections"]].map(([v,l])=>(
+          {[["55","Questions"],["90","Minutes"],["1pt","Each"],["6","Sections"]].map(([v,l])=>(
             <div key={l} style={{background:"rgba(59,130,246,0.12)",border:"1px solid rgba(59,130,246,0.3)",borderRadius:"12px",padding:"14px 10px"}}>
               <div style={{fontSize:"26px",fontWeight:800,color:"#60a5fa",lineHeight:1}}>{v}</div>
               <div style={{fontSize:"10px",color:"#64748b",marginTop:"4px",textTransform:"uppercase",letterSpacing:"1px",fontWeight:600}}>{l}</div>
@@ -305,19 +285,19 @@ export default function App() {
         </div>
 
         <div style={{background:"rgba(255,255,255,0.02)",border:"1px solid rgba(255,255,255,0.08)",borderRadius:"14px",padding:"16px 20px",marginBottom:"24px",textAlign:"left"}}>
-          <div style={{fontSize:"10px",fontWeight:700,color:"#60a5fa",letterSpacing:"2.5px",marginBottom:"10px",textTransform:"uppercase"}}>Question Types</div>
+          <div style={{fontSize:"10px",fontWeight:700,color:"#60a5fa",letterSpacing:"2.5px",marginBottom:"10px",textTransform:"uppercase"}}>Complete Coverage</div>
           <div style={{display:"grid",gridTemplateColumns:"1fr 1fr",gap:"8px"}}>
-            {Object.entries(TYPE_META).map(([type,{icon,label,color}])=>(
-              <div key={type} style={{fontSize:"11px",color:"#cbd5e1",display:"flex",alignItems:"center",gap:"6px"}}>
-                <span style={{fontSize:"14px"}}>{icon}</span>
-                <span style={{fontWeight:600,color}}>{label}</span>
+            {["Classes & Objects","Methods & Modifiers","Constructors","Inheritance & extends","Method Overriding","super Keyword","Interfaces & implements","Abstract Methods"].map(t=>(
+              <div key={t} style={{fontSize:"11px",color:"#cbd5e1",display:"flex",alignItems:"center",gap:"6px"}}>
+                <span style={{color:"#60a5fa"}}>✓</span>
+                <span style={{fontWeight:500}}>{t}</span>
               </div>
             ))}
           </div>
         </div>
 
         <div style={{background:"rgba(251,191,36,0.1)",border:"1px solid rgba(251,191,36,0.3)",borderRadius:"12px",padding:"12px 18px",marginBottom:"26px"}}>
-          <p style={{fontSize:"11px",color:"#fbbf24",fontFamily:"'JetBrains Mono',monospace",lineHeight:1.5}}>🎵 Focus music • Code snippets • Instant feedback • Review mode</p>
+          <p style={{fontSize:"11px",color:"#fbbf24",fontFamily:"'JetBrains Mono',monospace",lineHeight:1.5}}>🎵 Focus music • Code examples • Fish/Tilapia scenarios • Box/Shape demos</p>
         </div>
 
         <button className="btn" onClick={()=>{setScreen("exam");setTimerActive(true);}}
@@ -335,7 +315,7 @@ export default function App() {
       <div style={{maxWidth:"720px",margin:"0 auto"}}>
         <div className="fade" style={{background:"rgba(255,255,255,0.03)",backdropFilter:"blur(24px)",border:"1px solid rgba(59,130,246,0.25)",borderRadius:"20px",padding:"40px 32px",textAlign:"center",marginBottom:"16px",boxShadow:"0 0 40px rgba(59,130,246,0.15)"}}>
           <div style={{fontSize:"48px",marginBottom:"6px"}}>{grade.e}</div>
-          <div style={{fontSize:"58px",fontWeight:800,color:grade.c,lineHeight:1}}>{score}<span style={{fontSize:"24px",color:"#64748b",fontWeight:600}}>/60</span></div>
+          <div style={{fontSize:"58px",fontWeight:800,color:grade.c,lineHeight:1}}>{score}<span style={{fontSize:"24px",color:"#64748b",fontWeight:600}}>/55</span></div>
           <div style={{fontSize:"17px",color:"#94a3b8",marginTop:"8px",fontFamily:"'JetBrains Mono',monospace"}}>{pct}% — <span style={{color:grade.c,fontWeight:700}}>{grade.label}</span></div>
           <div style={{background:"rgba(255,255,255,0.08)",borderRadius:"10px",height:"10px",margin:"20px 0 6px",overflow:"hidden"}}>
             <div style={{height:"100%",width:`${pct}%`,background:`linear-gradient(90deg,${grade.c},#60a5fa)`,borderRadius:"10px",transition:"width 1.2s ease"}}/>
@@ -396,9 +376,9 @@ export default function App() {
       <div style={{background:"rgba(10,14,20,0.98)",backdropFilter:"blur(16px)",borderBottom:"1px solid rgba(59,130,246,0.25)",padding:"12px 18px",display:"flex",alignItems:"center",gap:"14px",position:"sticky",top:0,zIndex:50,flexWrap:"wrap"}}>
         <div style={{fontFamily:"'JetBrains Mono',monospace",fontWeight:700,color:"#e2e8f0",fontSize:"13px"}}>IT2408</div>
         <div style={{flex:1,background:"rgba(255,255,255,0.08)",borderRadius:"8px",height:"7px",overflow:"hidden",minWidth:"120px"}}>
-          <div style={{height:"100%",width:`${(current/60)*100}%`,background:"linear-gradient(90deg,#3b82f6,#8b5cf6)",borderRadius:"8px",transition:"width 0.4s"}}/>
+          <div style={{height:"100%",width:`${(current/55)*100}%`,background:"linear-gradient(90deg,#3b82f6,#8b5cf6)",borderRadius:"8px",transition:"width 0.4s"}}/>
         </div>
-        <div style={{fontSize:"11px",color:"#64748b",fontFamily:"'JetBrains Mono',monospace",fontWeight:600}}>{current+1}/60</div>
+        <div style={{fontSize:"11px",color:"#64748b",fontFamily:"'JetBrains Mono',monospace",fontWeight:600}}>{current+1}/55</div>
         <div style={{fontFamily:"'JetBrains Mono',monospace",fontSize:"14px",fontWeight:700,color:timeLeft<300?"#fca5a5":"#60a5fa"}}>⏱ {fmt(timeLeft)}</div>
         <button className="btn" onClick={()=>setIsMuted(!isMuted)} style={{background:"rgba(59,130,246,0.18)",border:"1px solid rgba(59,130,246,0.4)",color:"#60a5fa",fontSize:"17px",padding:"5px 11px",borderRadius:"20px"}}>{isMuted?"🔇":"🔊"}</button>
         {!reviewMode
@@ -415,7 +395,7 @@ export default function App() {
           </div>
           <p style={{fontSize:"clamp(14px,2.4vw,17px)",color:"#e2e8f0",lineHeight:1.7,marginBottom:"22px"}}>
             <span style={{fontFamily:"'JetBrains Mono',monospace",fontWeight:700,color:"#60a5fa",marginRight:"8px"}}>{q.num}.</span>
-            {q.q}
+            <span dangerouslySetInnerHTML={{__html:q.q.replace(/`([^`]+)`/g,'<code>$1</code>')}}/>
           </p>
           <div style={{display:"flex",flexDirection:"column",gap:"9px"}}>
             {q.c.map((c,i)=>{
@@ -449,7 +429,7 @@ export default function App() {
             style={{background:"rgba(255,255,255,0.06)",border:"1px solid rgba(255,255,255,0.12)",color:current===0?"#334155":"#94a3b8",fontSize:"13px",padding:"11px 22px",borderRadius:"50px",opacity:current===0?0.4:1,fontWeight:600}}>
             ← Prev
           </button>
-          <div style={{display:"flex",gap:"4px",flexWrap:"wrap",justifyContent:"center",maxWidth:"340px"}}>
+          <div style={{display:"flex",gap:"4px",flexWrap:"wrap",justifyContent:"center",maxWidth:"360px"}}>
             {questions.map((_,i)=>{
               const a=answers[i];const ok=a===questions[i].a;
               const dot=a===null?"#334155":reviewMode?(ok?"#10b981":"#ef4444"):"#3b82f6";
@@ -457,7 +437,7 @@ export default function App() {
                 style={{width:i===current?"10px":"7px",height:i===current?"10px":"7px",background:dot,border:i===current?"2px solid #60a5fa":"none",flexShrink:0}}/>;
             })}
           </div>
-          {current<59
+          {current<54
             ?<button className="btn" onClick={next}
                 style={{background:showFeedback||reviewMode?"linear-gradient(135deg,#3b82f6,#8b5cf6)":"rgba(59,130,246,0.18)",border:"1px solid rgba(59,130,246,0.5)",color:"#60a5fa",fontSize:"13px",padding:"11px 22px",borderRadius:"50px",fontWeight:showFeedback||reviewMode?700:600}}>
                 Next →
@@ -468,7 +448,7 @@ export default function App() {
               </button>
           }
         </div>
-        <p style={{fontSize:"11px",color:"#475569",textAlign:"center",marginTop:"16px",fontFamily:"'JetBrains Mono',monospace",fontWeight:600}}>{answered} of 60 answered</p>
+        <p style={{fontSize:"11px",color:"#475569",textAlign:"center",marginTop:"16px",fontFamily:"'JetBrains Mono',monospace",fontWeight:600}}>{answered} of 55 answered</p>
       </div>
     </div>
   );
